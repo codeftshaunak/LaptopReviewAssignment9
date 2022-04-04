@@ -31,7 +31,7 @@ const Home = () => {
     </div>
     
       <div className='homesection__review'>
-        <h2>Customer Reviews</h2>
+        <h2>Customer Reviews(03)</h2>
                   <div className='carusel__Items'>
         {
           items.map(review =>
