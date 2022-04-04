@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Carusel from '../Carusel/Carusel';
+import useReview from '../hooks/useReview';
 import laptopimg from '../image/laptop.jpg';
 import './Home.css';
 
-const Home=()=> {
+const Home = () => {
+  const [review, setReview] = useReview();
+  const items = review.slice(0, 3);
   return (
     <div>
       <div className='home'>
@@ -27,9 +31,17 @@ const Home=()=> {
     </div>
     
       <div className='homesection__review'>
-         <h2>Customer Reviews</h2>
-      
-         <Link to='./review' className='home__button'>See All Reviews</Link>
+        <h2>Customer Reviews</h2>
+                  <div className='carusel__Items'>
+        {
+          items.map(review =>
+            <Carusel
+              key={review.id}
+              review={review}
+          ></Carusel>)
+          }
+          </div>
+        <Link to='./review' className='home__button'>See All Reviews</Link>
       </div>
     </div>
   )
