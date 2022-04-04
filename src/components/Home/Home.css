@@ -40,3 +40,13 @@ transition: 0.5s ease-in-out;
         text-align: center;
 }
 
+@media only screen and (max-width:900px) {
+        .home{
+                flex-wrap: wrap;
+                text-align: center;
+        }
+.home img{
+        margin-top: 30px;
+}
+}
+
